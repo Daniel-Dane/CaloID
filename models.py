@@ -283,7 +283,7 @@ def train_caloclf_model(model_fn, data_train, labels_train, data_test,
         pos_label=0
     )
 
-    rej = 1 / fpr
+    rej = 1 / (fpr + 1e-10)
 
     working_points = [0.60, 0.70, 0.80, 0.90, 0.96, 0.97, 0.98, 0.99, 0.9999]
 
