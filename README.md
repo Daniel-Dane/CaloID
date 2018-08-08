@@ -17,3 +17,11 @@
 * Scikit learn
 * h5py
 
+### Installation of requirements
+Run the following first (assuming you have (mini)conda installed and in your environment)
+```shell
+conda config --add channels conda-forge
+conda update -y conda
+conda env create -f conda_package_list.yml
+source activate CaloID
+```
