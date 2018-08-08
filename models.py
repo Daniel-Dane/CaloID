@@ -54,7 +54,7 @@ def build_densenet_model(data):
 
 def build_shower_shape_model(data, bn=True, dropout_rate=0.0, skip=False):
 
-    apply_bn = lambda x: BatchNormalization()(x) if bn else lambda x: x
+    apply_bn = (lambda x: BatchNormalization()(x)) if bn else (lambda x: x)
     x = Input(shape=(data.shape[1], ))
 
     h = Dense(512)(x)
@@ -98,7 +98,7 @@ def build_shower_shape_model(data, bn=True, dropout_rate=0.0, skip=False):
 
 def build_raveled_model(data, bn=True, dropout_rate=0.0):
 
-    apply_bn = lambda x: BatchNormalization()(x) if bn else lambda x: x
+    apply_bn = (lambda x: BatchNormalization()(x)) if bn else (lambda x: x)
 
     x = Input(shape=(data.shape[1], ))
 
@@ -144,7 +144,7 @@ def build_lagan_style_model(data, lcn=True, bn=True, dropout_rate=0.0):
 
         layer_op = LocallyConnected2D if lcn else Conv2D
 
-        apply_bn = lambda x: BatchNormalization()(x) if bn else lambda x: x
+        apply_bn = (lambda x: BatchNormalization()(x)) if bn else (lambda x: x)
 
         x = Conv2D(64, (2, 2), padding='same')(image)
 
