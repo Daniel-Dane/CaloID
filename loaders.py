@@ -47,6 +47,7 @@ def load_all_data(basedir, class_one='piplus', class_two='eplus',
         os.path.join(os.path.abspath(basedir),
                      '{}{}'.format(class_one, ending))
     )
+    assert(len(c1path) > 0)
     logger.info('Extracting data for {} from {}'.format(class_one, c1path))
     c1 = load_calodata(c1path)
 
@@ -54,6 +55,7 @@ def load_all_data(basedir, class_one='piplus', class_two='eplus',
         os.path.join(os.path.abspath(basedir),
                      '{}{}'.format(class_two, ending))
     )
+    assert(len(c2path) > 0)
     logger.info('Extracting data for {} from {}'.format(class_two, c2path))
     c2 = load_calodata(c2path)
 
