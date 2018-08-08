@@ -1,0 +1,17 @@
+name: CaloID
+channels:
+- conda-forge
+- defaults
+- anaconda
+dependencies:
+- python=3.6
+- numpy
+- scipy
+- h5py
+- scikit-learn
+- pandas
+- cython
+- pip:
+  - keras==2.2.0
+  - tensorflow
+  - git+https://github.com/keras-team/keras-contrib.git#egg=keras-contrib
